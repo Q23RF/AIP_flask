@@ -11,7 +11,7 @@
 
 body {
   margin: 50px;
-  font-family: Arial, 'Noto Serif TC', serif, 'Abril Fatface', cursive;
+  font-family: 'Noto Serif TC', Times, serif;
 }
 
   
@@ -32,13 +32,23 @@ body {
 /* Side navigation links */
 .sidenav a {
   color: white;
-  font: 'Abril Fatface';
+  font-family: Times, serif;
   font-size: 3.5vw;
+  font-variant: small-caps;
   padding-left: 2vw;
   padding-top: 2vh;
   padding-bottom: 1vh;
+  letter-spacing: 0.1em;
   text-decoration: none;
   display: block;
+}
+
+.sidenav>:nth-last-child(1) {
+  width: 24%;
+  margin-bottom: 10px;
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
 }
 
 /* Change color on hover */
@@ -68,14 +78,13 @@ body {
 }
 
 /* Style the inputs */
-
-
 ::placeholder {
   font: 'Noto Serif TC';
 }
 input, select{
   margin: 8px 0;  
 }
+
 input[type=text], input[type=number], select {
   width: 60vw;
   padding: 12px 20px;
@@ -94,6 +103,7 @@ input[type=submit] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  margin-bottom: 15px;
 }
 
 input[type=submit]:hover {
@@ -108,6 +118,7 @@ input[type=button] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  margin-bottom: 15px;
 }
 
 /* special styling for wide viewports */
@@ -120,6 +131,14 @@ input[type=button] {
     padding-top: 15px;
     font-size: 28px;
   }
+  
+.sidenav>:nth-last-child(1) {
+  width: 20%;
+  margin-bottom: 10px;
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+}
 
   .content {
     margin-left: 21%;
