@@ -1,0 +1,124 @@
+:root {
+  --primary:#990000;
+  --primaryD:#800000;
+  --secondary:#9E9E9E;
+  --secondaryD:#353535;
+}
+  
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 50px;
+  font-family: Arial, Helvetica, 'Noto Serif TC', serif;
+}
+
+  
+/* Style the side navigation */
+.sidenav {
+  height: 100%;
+  width: 24%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: var(--primary);
+  overflow-x: hidden;
+}
+
+
+/* Side navigation links */
+.sidenav a {
+  color: white;
+  font: sans-serif;
+  font-size: 3.5vw;
+  padding-left: 2vw;
+  padding-top: 3vw;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color on hover */
+.sidenav a:hover {
+  background-color: var(--primaryD);
+  color: white;
+}
+
+/* Style the content */
+.content {
+  margin-left: 24%;
+  padding-left: 20px;
+  font: 'Noto Serif TC';
+  color: var(--secondaryD);
+}
+
+/* Style the inputs */
+
+
+::placeholder {
+  font: 'Noto Serif TC';
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid var(--secondaryD);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=number], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid var(--secondaryD);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+  
+input[type=submit] {
+  width: 100%;
+  background-color: var(--primary);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: var(--primaryD);
+}
+  
+input[type=button] {
+  width: 30%;
+  background-color: var(--primary);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+@media (min-width: 980px) {
+.sidenav {
+  height: 100%;
+  width: 20%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: var(--primary);
+  overflow-x: hidden;
+}
+  .sidenav a {
+    padding-top: 20px;
+    font-size: 28px;
+  }
+}

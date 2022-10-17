@@ -4,98 +4,10 @@
 <title>AIPOET</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-
-:root {
-  --primary:#990000;
-  --primaryD:#800000;
-  --secondary:#9E9E9E;
-  --secondaryD:#353535;
-}
-  
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 30px;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-/* Style the side navigation */
-.sidenav {
-  height: 100%;
-  width: 20%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: var(--primary);
-  overflow-x: hidden;
-}
-
-
-/* Side navigation links */
-.sidenav a {
-  color: white;
-  font: sans-serif;
-  padding: 16px;
-  text-decoration: none;
-  display: block;
-}
-
-/* Change color on hover */
-.sidenav a:hover {
-  background-color: var(--primaryD);
-  color: white;
-}
-
-/* Style the content */
-.content {
-  margin-left: 20%;
-  padding-left: 20px;
-  font: Helvetica;
-  color: var(--secondaryD);
-}
-
-
-/* Style the inputs */
-input[type=text], select {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid var(--secondaryD);
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-input[type=number], select {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid var(--secondaryD);
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-  
-input[type=submit] {
-  width: 100%;
-  background-color: var(--primary);
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-input[type=submit]:hover {
-  background-color: var(--primaryD);
-}
-
-</style>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap" rel="stylesheet">
 </head>
 <body>
 
