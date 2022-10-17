@@ -5,6 +5,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap" rel="stylesheet">
@@ -27,29 +29,42 @@
 
 <div class="content">
   <form method="post">
-    <label for="n">數量:</label>
-    <input type="number" id="n" name="n" placeholder="您希望AI詩人寫出幾首詩？">
+    <div>
+      <label for="n">數量:</label>
+    </div>
+    <div>
+      <input type="number" id="n" name="n" placeholder="您希望AI詩人寫出幾首詩？">
+    </div>
 
-    <label for="len">長度:</label>
-    <input type="number" id="len" name="len" placeholder="您希望每首詩多長？">
+    <div>
+       <label for="len">長度:</label>
+    </div>
+    <div>
+      <input type="number" id="len" name="len" placeholder="您希望每首詩多長？">     
+    </div>
 
-    <label for="poet">詩人:</label>
-    <select id="poet" name="poet">
-      <option value=0>余光中</option>
-      <option value=1>席慕蓉</option>
-      <option value=2>洛夫</option>
-    </select>
-  
+    <div>
+      <label for="poet">詩人:</label>
+    </div>
+    <div>
+      <select id="poet" name="poet">
+        <option value=0>余光中</option>
+        <option value=1>席慕蓉</option>
+        <option value=2>洛夫</option>
+      </select> 
+    </div>
+
+  <div>
     <input type="submit" value="寫詩！">
+  </div>
   </form>
 </div>
 <div class="content">
-  {% for p in range(poem|length)%}
-    {% for l in poem[p] %}
+  {% for p in poem%}
+    {% for l in p %}
       <div>{{ l }}</div>
     {% endfor %}
-    <div>---</div>
-    <!--input type="button" id="p" onclick="print(poem[id])" value="選擇"-->
+    <input type="button" onclick="print({{p}})" value="影印">
   {% endfor %}
 </div>
 
