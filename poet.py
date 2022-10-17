@@ -89,5 +89,4 @@ def write(n, length, fn):
                 passed = False
         if passed:
             re.append(text)
-            re.append(["------------------------\n"])
     return re
