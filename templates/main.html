@@ -125,7 +125,11 @@ input[type=submit]:hover {
   </form>
 </div>
 <div class="content">
-  <p>{{poem}}</p>
+  {% for p in poem %}
+    {% for l in p %}
+      <div>{{ l }}</div>
+    {% endfor %}
+  {% endfor %}
 </div>
 
 </body>
