@@ -11,12 +11,13 @@
 
 body {
   margin: 50px;
-  font-family: Arial, Helvetica, 'Noto Serif TC', serif;
+  font-family: Arial, 'Noto Serif TC', serif, 'Abril Fatface', cursive;
 }
 
   
 /* Style the side navigation */
 .sidenav {
+  padding-top: 1.5vh;
   height: 100%;
   width: 24%;
   position: fixed;
@@ -31,10 +32,11 @@ body {
 /* Side navigation links */
 .sidenav a {
   color: white;
-  font: sans-serif;
+  font: 'Abril Fatface';
   font-size: 3.5vw;
   padding-left: 2vw;
-  padding-top: 3vw;
+  padding-top: 2vh;
+  padding-bottom: 1vh;
   text-decoration: none;
   display: block;
 }
@@ -106,11 +108,12 @@ input[type=button] {
   cursor: pointer;
 }
 
-@media (min-width: 980px) {
+@media (min-width: 930px) {
 .sidenav {
   height: 100%;
   width: 20%;
   position: fixed;
+  padding-top:12px;
   z-index: 1;
   top: 0;
   left: 0;
@@ -118,7 +121,7 @@ input[type=button] {
   overflow-x: hidden;
 }
   .sidenav a {
-    padding-top: 20px;
+    padding-top: 15px;
     font-size: 28px;
   }
 }
