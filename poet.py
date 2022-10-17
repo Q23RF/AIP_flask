@@ -46,7 +46,7 @@ def addWord(words, wordDict):
         wordDict[words[i - 1]][words[i]] += 1
 
 
-files = ['ygz.txt', 'xmr.txt', 'lf.txt']
+files = ['懷古.txt', '抒情.txt', '奇詭.txt']
 
 notfirst = ["裏", "著", "的", "嗎", "吧", "，", "。"]
 

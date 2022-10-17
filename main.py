@@ -9,8 +9,8 @@ def main():
     if request.method == "POST":
         n = int(request.form["n"])
         len = int(request.form["len"])
-        poet = int(request.form["poet"])
-        re = write(n, len, poet)  #.replace('\n', '<br>')
+        style = int(request.form["style"])
+        re = write(n, len, style)  #.replace('\n', '<br>')
         return render_template('main.html', poem=re)
     else:
         return render_template('main.html', poem='')

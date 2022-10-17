@@ -4,7 +4,7 @@
   --secondary:#9E9E9E;
   --secondaryD:#353535;
 }
-  
+
 * {
   box-sizing: border-box;
 }
@@ -49,13 +49,10 @@ body {
 
 /* Style the content */
 .content {
-  /*margin-left: 24%;*/
+  margin-left: 24%;
   width: 76%;
   font: 'Noto Serif TC';
   color: var(--secondaryD);
-  position: fixed;
-  z-index: 1;
-  right: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
