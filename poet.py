@@ -57,15 +57,9 @@ no = [
 
 
 def write(n, length, fn):
-    re = ""
+    re = []
     wordDict = buildWordDict(files[fn])
 
-    # 產生n首詩，挑出押韻最多的一首
-    poem = ""
-    value = 0
-
-    # 紀錄
-    midx, mvalue = 0, 0
     # 以下做n次
     for idx in range(n):
         #Generate text of length 100
@@ -73,32 +67,27 @@ def write(n, length, fn):
         while initialWord in notfirst:
             initialWord = choice(list(wordDict.keys()))
 
-        text = ""
+        text = []
         currentWord = initialWord
         i = 0
-        wpl = 0
+        line = ""
         while True:
             i += 1
             if currentWord not in wordDict:
                 currentWord = initialWord
             currentWord = retrieveRandomWord(wordDict[currentWord])
 
+            line += currentWord
             if currentWord == '\n':
-                wpl = 0
-            else:
-                wpl += 1
-
-            if wpl > 15:
-                currentWord = '\n'
-
-            text += currentWord
-            if currentWord == '\n' and i >= length:
-                break
+                text.append(line)
+                line = ""
+                if i >= length:
+                    break
         passed = True
         for n in no:
             if n in text:
                 passed = False
         if passed:
-            re += text + "\n"
-            re += "------------------------\n"
+            re.append(text)
+            re.append(["------------------------\n"])
     return re
