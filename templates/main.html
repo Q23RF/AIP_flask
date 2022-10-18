@@ -63,7 +63,7 @@
     {% for l in p %}
       <div>{{ l }}</div>
     {% endfor %}
-    <button id="toprint" name={{p}} type="button">
+    <button class="toprint" value={{p}} type="button">
       影印
     </button>
   {% endfor %}
@@ -79,9 +79,10 @@
 </script>
   
 <script>
-  $('#toprint').click(
+  $('.toprint').click(
   function(){
-    var text = $('#toprint').attr("name");
+    "use strict";
+    var text = $(this).val();
 
     $.ajax({
           type: "POST",
