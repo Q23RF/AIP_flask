@@ -3,7 +3,6 @@ from poet import write
 
 app = Flask(__name__)
 
-
 @app.route('/', methods=["POST", "GET"])
 def main():
     if request.method == "POST":
@@ -18,7 +17,7 @@ def main():
 
 @app.route('/feedback', methods=["POST", "GET"])
 def feedback():
-    return render_template('feedback.html')
+  return render_template('feedback.html')
 
 
 @app.route('/gallery')
