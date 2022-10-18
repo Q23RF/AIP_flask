@@ -58,14 +58,14 @@
     <input type="submit" value="寫詩！">
   </div>
   </form>
-</div>
-<div class="content">
+<div style="width: 60vw;">
   {% for p in poem%}
     {% for l in p %}
       <div>{{ l }}</div>
     {% endfor %}
     <input type="button" onclick="print({{p}})" value="影印">
   {% endfor %}
+</div>  
 </div>
 
 </body>
