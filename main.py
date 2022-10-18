@@ -1,6 +1,5 @@
-from flask import Flask, render_template, redirect, request, url_for, jsonify
+from flask import Flask, render_template, request
 from poet import write
-import requests
 
 app = Flask(__name__)
 printurl = 'https://poem-receiver-for-aip.elsie094081.repl.co/'
