@@ -63,10 +63,11 @@
     {% for l in p %}
       <div>{{ l }}</div>
     {% endfor %}
-    <input type="button" onclick="print({{p}})" value="影印">
+    <button onclick="window.location.href='{{ url_for( 'toprint' , text=p[0] ) }}'">影印</button>
   {% endfor %}
 </div>  
 </div>
 
 </body>
 </html>
+
