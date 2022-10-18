@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, request, url_for
+from flask import Flask, render_template, redirect, request, url_for, jsonify
 from poet import write
 import requests
 
@@ -26,9 +26,8 @@ def feedback():
 def gallery():
     return render_template('gallery.html')
 
-@app.route('/toprint/<text>')
-def toprint(text):
-    requests.post(printurl, data = {'text':text})
-    return redirect(url_for('main'))
+@app.route('/route_function',methods=[ "GET",'POST'])
+def route_function():
+    return "default text"
 
 app.run(host='0.0.0.0', port=81)

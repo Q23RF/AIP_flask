@@ -63,11 +63,42 @@
     {% for l in p %}
       <div>{{ l }}</div>
     {% endfor %}
-    <button onclick="window.location.href='{{ url_for( 'toprint' , text=p[0] ) }}'">影印</button>
+    <button id="toprint" name={{p}} type="button">
+      影印
+    </button>
   {% endfor %}
 </div>  
 </div>
 
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="{{
+  url_for('static', filename='jquery.js') }}">\x3C/script>')</script>
+
+<script type=text/javascript>
+  $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+</script>
+  
+<script>
+  $('#toprint').click(
+  function(){
+    var text = $('#toprint').attr("name");
+
+    $.ajax({
+          type: "POST",
+          url: $SCRIPT_ROOT + "/route_function",
+          data: text,
+          success: (text) => {
+            console.log(text);
+            },
+          contentType: false,
+          processData: false,
+          dataType: "json"
+        });
+  }
+  );
+</script>
+
+  
 </body>
 </html>
 
