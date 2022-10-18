@@ -14,7 +14,7 @@ shows some of the AI poet's previous work.
 
 ## TO-DOs
 
-### actual printing feature
+### ~~actual printing feature~~   DONE!
 gotta post selected poems to another website so that they can apply to some design made there and eventually get printed out.
 
 ### optimizing
@@ -22,3 +22,4 @@ the poet writes stuffs that are grammarly wrong. i coded LINES to stop that but 
 
 ### MORE training data
 it's kinda dumb now.
+
