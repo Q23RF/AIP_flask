@@ -7,7 +7,7 @@ made for an expo
 writes poems with given parameters, prints selected ones (just to console now cuz i don't have a machine).
 
 ### FEEDBACK
-send feedback to me via mailbot.
+send feedbacks to me via mailbot.
 
 ### GALLERY
 shows some of the AI poet's previous work.
