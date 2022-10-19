@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from poet import write
+from mail import send
 
 app = Flask(__name__)
 printurl = 'https://poem-receiver-for-aip.elsie094081.repl.co/'
@@ -18,7 +19,10 @@ def main():
 
 @app.route('/feedback', methods=["POST", "GET"])
 def feedback():
-  return render_template('feedback.html')
+    if request.method == "POST":
+        fb = request.form["fb"]
+        send(fb)
+    return render_template('feedback.html')
 
 
 @app.route('/gallery')

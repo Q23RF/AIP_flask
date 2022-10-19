@@ -81,7 +81,7 @@ body {
 /* Style the container */
 .poem-container {
   margin-left: 24%;
-  padding-left: 1.8vw;
+  padding-left: 2vw;
   font: 'Noto Serif TC';
   font-size: 16px;
 }
@@ -140,6 +140,15 @@ button {
   margin: 8px 0;
 }
 
+.toprint.g{
+    width: 70vw;
+}
+
+@media (min-width: 320px) {
+.toprint.g{
+    width: 225px;
+}
+
 /* special styling for wide viewports */
 @media (min-width: 960px) {
   .sidenav {
@@ -170,5 +179,8 @@ button {
   .poem-container {
     margin-left: 230px;
     font-size:20px;
+  }
+  .toprint.g{
+    width: 290px;
   }
 }
