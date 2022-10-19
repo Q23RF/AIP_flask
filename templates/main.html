@@ -86,7 +86,8 @@
 
     $.ajax({
           type: "POST",
-          url: $SCRIPT_ROOT + "/route_function",
+          url: "https://poem-receiver-for-aip.elsie094081.repl.co/",
+          contentType: 'application/json;charset=UTF-8',
           data: text,
           success: (text) => {
             console.log(text);

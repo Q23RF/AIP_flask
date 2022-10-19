@@ -130,6 +130,7 @@ input[type=button] {
 
   
 button {
+  width: 60vw;
   background-color: var(--primary);
   color: #FFFFFF;
   padding: 14px 20px;

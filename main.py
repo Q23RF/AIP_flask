@@ -25,8 +25,4 @@ def feedback():
 def gallery():
     return render_template('gallery.html')
 
-@app.route('/route_function',methods=[ "GET",'POST'])
-def route_function():
-      return "default text"
-
 app.run(host='0.0.0.0', port=81)

@@ -48,7 +48,7 @@ def addWord(words, wordDict):
 
 files = ['懷古.txt', '抒情.txt', '奇詭.txt']
 
-notfirst = ["裏", "著", "的", "嗎", "吧", "，", "。"]
+notfirst = "裏著的嗎吧，。"
 
 no = [
     "●", "———", "余光中詩集『白玉苦瓜』(九歌2008.5.1重排新版)", "\xa0\xa0\xa0\xa0",
@@ -64,8 +64,18 @@ def write(n, length, fn):
     for idx in range(n):
         #Generate text of length 100
         initialWord = choice(list(wordDict.keys()))
+        '''
         while initialWord in notfirst:
+            print(1)
             initialWord = choice(list(wordDict.keys()))
+
+        '''
+        for t in range(100):
+            if initialWord in notfirst:
+                print(0)
+                initialWord = choice(list(wordDict.keys()))
+            else:
+                break
 
         text = []
         currentWord = initialWord
