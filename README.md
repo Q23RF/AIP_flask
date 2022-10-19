@@ -7,7 +7,7 @@ made for an expo
 writes poems with given parameters, prints selected ones (just to console now cuz i don't have a machine).
 
 ### FEEDBACK
-doesn't really send feedbacks it's just a cool lil box where u can type whatever u want and i won't know ab them.
+send feedback to me via mailbot.
 
 ### GALLERY
 shows some of the AI poet's previous work.
