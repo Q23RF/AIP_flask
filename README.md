@@ -17,7 +17,7 @@ shows some of the AI poet's previous work.
 ### ~~actual printing feature~~   DONE!
 gotta post selected poems to another website so that they can apply to some design made there and eventually get printed out.
 
-### optimizing
+### ~~optimizing~~   DONE!
 the poet writes stuffs that are grammarly wrong. i coded LINES to stop that but they just wont work.
 
 ### MORE training data
