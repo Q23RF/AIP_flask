@@ -1,10 +1,3 @@
-'''
-import os
-if os.getcwd()[-5:] != 'train':
-    os.chdir('./train')
-print(os.getcwd())
-'''
-
 from random import randint, choice
 
 
@@ -34,12 +27,11 @@ def buildWordDict(fn):
 
 
 def addWord(words, wordDict):
-    import jieba  # 加入結巴
+    import jieba 
     words = words.replace("？", "")
-    words = jieba.lcut(words)  # 結巴要秀了
+    words = jieba.lcut(words)
     for i in range(1, len(words)):
         if words[i - 1] not in wordDict:
-            #Create a new dictionary for this word
             wordDict[words[i - 1]] = {}
         if words[i] not in wordDict[words[i - 1]]:
             wordDict[words[i - 1]][words[i]] = 0
@@ -48,34 +40,17 @@ def addWord(words, wordDict):
 
 files = ['懷古.txt', '抒情.txt', '奇詭.txt']
 
-notfirst = "裏著的嗎吧，。"
+notfirst = "的著嗎吧呢了，。！？：；」"
 
-no = [
-    "●", "———", "余光中詩集『白玉苦瓜』(九歌2008.5.1重排新版)", "\xa0\xa0\xa0\xa0",
-    "\u3000\u3000", "\n的", "\n嗎", "(", ")", "（", "）", "」", "「", "高僧"
-]
+no = ["●", "余光中詩集『白玉苦瓜』(九歌2008.5.1重排新版)", "\xa0\xa0\xa0\xa0", "\u3000\u3000", "\n的", "\n嗎", "(", ")", "（", "）", "」", "「", "—", "~"]
 
 
 def write(n, length, fn):
     re = []
     wordDict = buildWordDict(files[fn])
 
-    # 以下做n次
     for idx in range(n):
-        #Generate text of length 100
         initialWord = choice(list(wordDict.keys()))
-        '''
-        while initialWord in notfirst:
-            print(1)
-            initialWord = choice(list(wordDict.keys()))
-
-        '''
-        for t in range(100):
-            if initialWord in notfirst:
-                print(0)
-                initialWord = choice(list(wordDict.keys()))
-            else:
-                break
 
         text = []
         currentWord = initialWord
@@ -88,7 +63,12 @@ def write(n, length, fn):
             currentWord = retrieveRandomWord(wordDict[currentWord])
 
             line += currentWord
+            if len(line) > 9:
+              currentWord = '\n'
             if currentWord == '\n':
+              if line[0] in notfirst:
+                line = line[1:]
+              else:
                 text.append(line)
                 line = ""
                 if i >= length:
