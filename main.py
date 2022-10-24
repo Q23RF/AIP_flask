@@ -1,6 +1,8 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for, send_from_directory
 from poet import write
 from mail import send
+from generate import write_on_img
+from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
 printurl = 'https://poem-receiver-for-aip.elsie094081.repl.co/'
@@ -8,11 +10,28 @@ printurl = 'https://poem-receiver-for-aip.elsie094081.repl.co/'
 @app.route('/', methods=["POST", "GET"])
 def main():
     if request.method == "POST":
-        n = int(request.form["n"])
-        len = int(request.form["len"])
-        style = int(request.form["style"])
-        re = write(n, len, style)  #.replace('\n', '<br>')
-        return render_template('main.html', poem=re)
+        if int(request.form["id"])==2:
+
+            print("generating img...")
+            p = request.form["poem"]
+            poem_list = p[2:-2].split("', '")
+            ptext=""
+            for line in poem_list:
+                ptext += line[:-2] + '\n'
+                print(line)
+            re = write_on_img(ptext).save("data/pc.png")
+            #return send_from_directory("{{ url_for('data') }}", fn, as_attachment=True)
+            return send_from_directory('data', "pc.png", as_attachment=True)
+
+
+        else:
+            n = int(request.form["n"])
+            len = int(request.form["len"])
+            style = int(request.form["style"])
+            re = write(n, len, style)
+            return render_template('main.html', poem=re)
+
+
     else:
         return render_template('main.html', poem='')
 
