@@ -5,7 +5,6 @@ from generate import write_on_img
 from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
-printurl = 'https://poem-receiver-for-aip.elsie094081.repl.co/'
 
 @app.route('/', methods=["POST", "GET"])
 def main():

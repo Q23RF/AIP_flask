@@ -40,7 +40,7 @@ def addWord(words, wordDict):
 
 files = ['懷古.txt', '抒情.txt', '奇詭.txt']
 
-notfirst = "的著嗎吧呢了、，。！？：；」"
+notfirst = "之的著嗎吧呢了、，。！？：；」"
 notlast = "只，；"
 no = ",.●()（）」「—~"
 
@@ -52,7 +52,6 @@ def write(n, length, fn):
     while len(re)<n:
         passed = True
         initialWord = choice(list(wordDict.keys()))
-
         text = []
         currentWord = initialWord
         i = 0
@@ -72,7 +71,7 @@ def write(n, length, fn):
                     if c in no:
                         print("句中出現「{}」，已刪除\n".format(c))
                         passed = False
-                if line[0] in notfirst:
+                while line[0] in notfirst:
                     print(line)
                     print("句首出現「{}」，已刪除\n".format(line[0]))
                     line = line[1:]
@@ -81,6 +80,9 @@ def write(n, length, fn):
                 else:
                     text.append(line)
                     if i >= length:
+                        while text[0][0] == '\n':
+                            print("首句為空行，已刪除\n")
+                            del text[0]
                         if len(line)>2 and line[-2] in notlast:
                             print(line)
                             print("詩末出現「{}」，已刪除\n".format(line[-2]))
