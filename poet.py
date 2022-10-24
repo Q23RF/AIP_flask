@@ -27,7 +27,7 @@ def buildWordDict(fn):
 
 
 def addWord(words, wordDict):
-    import jieba 
+    import jieba
     words = words.replace("？", "")
     words = jieba.lcut(words)
     for i in range(1, len(words)):
@@ -40,16 +40,17 @@ def addWord(words, wordDict):
 
 files = ['懷古.txt', '抒情.txt', '奇詭.txt']
 
-notfirst = "的著嗎吧呢了，。！？：；」"
-
-no = ["●", "余光中詩集『白玉苦瓜』(九歌2008.5.1重排新版)", "\xa0\xa0\xa0\xa0", "\u3000\u3000", "\n的", "\n嗎", "(", ")", "（", "）", "」", "「", "—", "~"]
+notfirst = "的著嗎吧呢了、，。！？：；」"
+notlast = "只，；"
+no = ",.●()（）」「—~"
 
 
 def write(n, length, fn):
     re = []
     wordDict = buildWordDict(files[fn])
 
-    for idx in range(n):
+    while len(re)<n:
+        passed = True
         initialWord = choice(list(wordDict.keys()))
 
         text = []
@@ -64,19 +65,25 @@ def write(n, length, fn):
 
             line += currentWord
             if len(line) > 9:
-              currentWord = '\n'
+                currentWord = '\n'
             if currentWord == '\n':
-              if line[0] in notfirst:
-                line = line[1:]
-              else:
-                text.append(line)
-                line = ""
-                if i >= length:
-                    break
-        passed = True
-        for n in no:
-            if n in text:
-                passed = False
+                for c in line:
+                    if c in no:
+                        print("句中出現「{}」，已刪除".format(c))
+                        passed = False
+                if line[0] in notfirst:
+                    print("句首出現「{}」，已刪除".format(line[0]))
+                    line = line[1:]
+                if line[-1] in notlast:
+                    print("句末出現「{}」，已刪除".format(line[-1]))
+                    line = line[:-1]
+
+                else:
+                    text.append(line)
+                    line = ""
+                    if i >= length:
+                        break
+
         if passed:
             re.append(text)
     return re
