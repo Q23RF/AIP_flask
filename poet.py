@@ -65,24 +65,28 @@ def write(n, length, fn):
 
             line += currentWord
             if len(line) > 9:
+                line += '\n'
                 currentWord = '\n'
             if currentWord == '\n':
                 for c in line:
                     if c in no:
-                        print("句中出現「{}」，已刪除".format(c))
+                        print("句中出現「{}」，已刪除\n".format(c))
                         passed = False
                 if line[0] in notfirst:
-                    print("句首出現「{}」，已刪除".format(line[0]))
+                    print(line)
+                    print("句首出現「{}」，已刪除\n".format(line[0]))
                     line = line[1:]
-                if line[-1] in notlast:
-                    print("句末出現「{}」，已刪除".format(line[-1]))
-                    line = line[:-1]
+
 
                 else:
                     text.append(line)
-                    line = ""
                     if i >= length:
+                        if len(line)>2 and line[-2] in notlast:
+                            print(line)
+                            print("詩末出現「{}」，已刪除\n".format(line[-2]))
+                            text[-1] = line[:-2] + '\n'
                         break
+                    line = ""
 
         if passed:
             re.append(text)

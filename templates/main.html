@@ -32,7 +32,7 @@
     </div>
 
     <div>
-       <label for="len">長度:</label>
+       <label for="len">長度 (建議為20~40字):</label>
     </div>
     <div>
       <input type="number" id="len" name="len" placeholder="您希望每首詩多長？">     
@@ -56,7 +56,10 @@
 <div style="width: 60vw;">
   {% for p in poem%}
     {% for l in p %}
-      <div>{{ l }}</div>
+	    {% if l == '\n' %}
+	        <br>
+	    {% endif %}
+        <div>{{ l }}</div>
     {% endfor %}
 	<form method="post">
 		<input type="hidden" id="id" name="id" value=2>

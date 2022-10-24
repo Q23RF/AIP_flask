@@ -20,7 +20,6 @@ def main():
                 ptext += line[:-2] + '\n'
                 print(line)
             re = write_on_img(ptext).save("data/pc.png")
-            #return send_from_directory("{{ url_for('data') }}", fn, as_attachment=True)
             return send_from_directory('data', "pc.png", as_attachment=True)
 
 
