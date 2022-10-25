@@ -61,12 +61,18 @@
 	    {% endif %}
         <div>{{ l }}</div>
     {% endfor %}
-	<form method="post">
-		<input type="hidden" id="id" name="id" value=2>
-		<input type="hidden" id="poem" name="poem" value="{{p}}">
-    	<input type="submit" value="產生圖片">
-	</form>
-
+	<div class="download-container">
+		<form class="download" method="post">
+			<input type="hidden" id="id" name="id" value=2>
+			<input type="hidden" id="poem" name="poem" value="{{p}}">
+	    	<input type="submit" class="download" value="下載">
+		</form>
+		<form class="download" method="post">
+			<input type="hidden" id="id" name="id" value=3>
+			<input type="hidden" id="poem" name="poem" value="{{p}}">
+	    	<input type="submit" class="download" value="下載並影印">
+		</form>
+	</div>
   {% endfor %}
 </div>
 </div>
