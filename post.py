@@ -16,7 +16,7 @@ def write_on_img(message):
   return img
 
 def send_line(message):
-	token = 'lKBD5xj141Gv6zZzYt6ycefuKRmfstxgfWRPKoxP74S'
+	token = 'LalUKhSiX5CrYhs0JudbZUrmiZJuSubqDpC6l0tUwHL'
 	headers = { "Authorization": "Bearer " + token }
 	data = { 'message': '\n'+message }
 	requests.post("https://notify-api.line.me/api/notify",

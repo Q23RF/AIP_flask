@@ -45,6 +45,14 @@ body {
 
 .sidenav>:nth-last-child(1) {
   width: 24%;
+  margin-bottom: max(8.5vw, 36px);
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+}
+
+.sidenav>:nth-last-child(2) {
+  width: 24%;
   margin-bottom: 10px;
   position: fixed;
   z-index: 1;
@@ -152,9 +160,10 @@ button {
     width: 70vw;
 }
 
-@media (min-width: 320px) {
-.toprint.g{
-    width: 225px;
+@media (min-width: 320px) and (max-width: 480px) {
+  .sidenav>:nth-last-child(1) {
+    margin-bottom: 42.5px;
+  }
 }
 
 /* special styling for wide viewports */
@@ -166,16 +175,17 @@ button {
   .sidenav a {
     padding-top: 15px;
     font-size: 32px;
+	width: 230px;
   }
   
-.sidenav>:nth-last-child(1) {
-  width: 230px;
-  margin-bottom: 10px;
-  position: fixed;
-  z-index: 1;
-  bottom: 0;
-}
+  .sidenav>:nth-last-child(1), .sidenav>:nth-last-child(2) {
+    width: 230px;
+  }
 
+  .sidenav>:nth-last-child(1) {
+    margin-bottom: 68px;
+  }
+	
   .content {
     margin-left: 230px;
   }
