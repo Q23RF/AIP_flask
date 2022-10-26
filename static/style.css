@@ -101,12 +101,15 @@ body {
   font: 'Noto Serif TC';
 }
 input, select{
+  -webkit-appearance: none;
+  -webkit-border-radius: none;
   margin: 8px 0;
   width: 60vw;
   background: var(--white);
 }
 
 input[type=text], input[type=number], select {
+  color: var(--secondaryD);
   padding: 12px 20px;
   display: inline-block;
   border: 1px solid var(--secondaryD);
@@ -116,6 +119,7 @@ input[type=text], input[type=number], select {
 
   
 input[type=submit] {
+  /*height: 42px;*/
   background-color: var(--primary);
   color: var(--white);
   padding: 14px 20px;
