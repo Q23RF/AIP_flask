@@ -4,7 +4,7 @@ made for an expo
 ## FEATURES
 
 ### MAIN
-writes poems with given parameters, prints selected ones (just to console now cuz i don't have a machine).
+writes poems with given parameters, generates image of and prints selected ones.
 
 ### FEEDBACK
 send feedbacks to me via mailbot.
