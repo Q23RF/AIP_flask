@@ -2,17 +2,15 @@ from PIL import Image, ImageDraw, ImageFont
 import requests
 
 def write_on_img(message):
-  #img = Image.open("{{ url_for('static', filename='2.jpg') }}")
   img = Image.open("static/2.jpg")
   font = ImageFont.truetype('static/莫大毛筆-Regular.ttf', 80)
-  #font = ImageFont.load_default()
   imgDraw = ImageDraw.Draw(img)
-
+  width = 1748
   textWidth, textHeight = imgDraw.textsize(message, font=font)
-  xText = 530
-  yText = 370
+  xText = (width-textWidth)/2
+  yText = 375
 
-  imgDraw.multiline_text((xText, yText), message, font=font, fill=(50, 50, 50), spacing=35)
+  imgDraw.multiline_text((xText, yText), message, font=font, fill=(50, 50, 50), spacing=40, align="center")
   return img
 
 def send_line(message):

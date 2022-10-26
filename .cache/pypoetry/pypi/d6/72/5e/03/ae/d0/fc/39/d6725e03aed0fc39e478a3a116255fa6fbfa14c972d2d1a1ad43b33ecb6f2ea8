@@ -1,0 +1,1 @@
+9999999999{"name": "Pillow-PIL", "version": "0.1dev", "summary": "Pillow wrapper for PIL compatibility", "platform": "UNKNOWN", "requires_dist": ["Pillow"], "requires_python": null, "files": [], "_cache_version": "1.0.0"}

@@ -3,7 +3,7 @@
   --primaryD:#800000;
   --secondary:#9E9E9E;
   --secondaryD:#353535;
-  --white: #fafaeb;
+  --white: #fffffa;
 }
 
 * {
@@ -109,7 +109,7 @@ input, select{
 input[type=text], input[type=number], select {
   padding: 12px 20px;
   display: inline-block;
-  border: 1px solid var(--secondaryD);
+  border: 1.5px solid var(--secondaryD);
   border-radius: 4px;
   box-sizing: border-box;
 }
