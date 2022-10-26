@@ -1,9 +1,9 @@
 :root {
-  --primary:#990000;
-  --primaryD:#800000;
-  --secondary:#9E9E9E;
-  --secondaryD:#353535;
-  --white: #fafaeb;
+  --primary:#e0361f;
+  --primaryD:#da7875;
+  --secondary:#8cc7d9;
+  --secondaryD:#698f9b;
+  --white: #fffced;
 }
 
 * {
@@ -99,17 +99,19 @@ body {
 /* Style the inputs */
 ::placeholder {
   font: 'Noto Serif TC';
+  color: var(--secondaryD);
 }
 input, select{
-  margin: 8px 0;
+  margin: 20px 0;
   width: 60vw;
   background: var(--white);
+  color: var(--secondaryD);
 }
 
 input[type=text], input[type=number], select {
   padding: 12px 20px;
   display: inline-block;
-  border: 1px solid var(--secondaryD);
+  border: 2.5px solid var(--secondaryD);
   border-radius: 4px;
   box-sizing: border-box;
 }
