@@ -63,17 +63,17 @@ def write(n, length, fn):
             currentWord = retrieveRandomWord(wordDict[currentWord])
 
             line += currentWord
-            if len(line) > 9:
+            if len(line) > 6:
                 line += '\n'
                 currentWord = '\n'
             if currentWord == '\n':
                 for c in line:
                     if c in no:
-                        print("句中出現「{}」，已刪除\n".format(c))
+                        #print("句中出現「{}」，已刪除\n".format(c))
                         passed = False
                 while line[0] in notfirst:
-                    print(line)
-                    print("句首出現「{}」，已刪除\n".format(line[0]))
+                    #print(line)
+                    #print("句首出現「{}」，已刪除\n".format(line[0]))
                     line = line[1:]
 
 
@@ -81,15 +81,16 @@ def write(n, length, fn):
                     text.append(line)
                     if i >= length:
                         while text[0][0] == '\n':
-                            print("首句為空行，已刪除\n")
+                            #print("首句為空行，已刪除\n")
                             del text[0]
                         if len(line)>2 and line[-2] in notlast:
-                            print(line)
-                            print("詩末出現「{}」，已刪除\n".format(line[-2]))
+                            #print(line)
+                            #print("詩末出現「{}」，已刪除\n".format(line[-2]))
                             text[-1] = line[:-2] + '\n'
                         break
                     line = ""
-
+        if len(text)>5:
+            passed = False
         if passed:
             re.append(text)
     return re

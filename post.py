@@ -3,14 +3,14 @@ import requests
 
 def write_on_img(message):
   img = Image.open("static/2.jpg")
-  font = ImageFont.truetype('static/莫大毛筆-Regular.ttf', 80)
+  font = ImageFont.truetype('static/莫大毛筆-Regular.ttf', 85)
   imgDraw = ImageDraw.Draw(img)
   width = 1748
   textWidth, textHeight = imgDraw.textsize(message, font=font)
   xText = (width-textWidth)/2
-  yText = 375
+  yText = 435
 
-  imgDraw.multiline_text((xText, yText), message, font=font, fill=(50, 50, 50), spacing=40, align="center")
+  imgDraw.multiline_text((xText, yText), message, font=font, fill=(50, 50, 50), spacing=32, align="center")
   return img
 
 def send_line(message):
