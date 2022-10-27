@@ -40,8 +40,8 @@ def addWord(words, wordDict):
 
 files = ['懷古.txt', '抒情.txt', '奇詭.txt']
 
-notfirst = "祐握外款處廠場之的著嗎吧呢了、，。！？：」"
-notlast = "最只款，"
+notfirst = "後人祐握外款處廠場之的著嗎吧呢了、，。！？：」"
+notlast = "最不只款，"
 no = "；：,.●()（）」「—~"
 
 
