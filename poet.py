@@ -40,9 +40,9 @@ def addWord(words, wordDict):
 
 files = ['懷古.txt', '抒情.txt', '奇詭.txt']
 
-notfirst = "款處廠場之的著嗎吧呢了、，。！？：；」"
-notlast = "只款，；"
-no = ",.●()（）」「—~"
+notfirst = "祐握外款處廠場之的著嗎吧呢了、，。！？：」"
+notlast = "最只款，"
+no = "；：,.●()（）」「—~"
 
 
 def write(n, length, fn):
@@ -63,7 +63,7 @@ def write(n, length, fn):
             currentWord = retrieveRandomWord(wordDict[currentWord])
 
             line += currentWord
-            if len(line) > 6:
+            if len(line) > 7:
                 line += '\n'
                 currentWord = '\n'
             if currentWord == '\n':
@@ -79,7 +79,7 @@ def write(n, length, fn):
 
                 else:
                     text.append(line)
-                    if i >= length or len(text)>4:
+                    if i+10 >= length and len(text)>4 and len(text)<6:
                         while text[0][0] == '\n':
                             #print("首句為空行，已刪除\n")
                             del text[0]
