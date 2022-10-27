@@ -79,7 +79,7 @@ def write(n, length, fn):
 
                 else:
                     text.append(line)
-                    if i >= length:
+                    if i >= length or len(text)>5:
                         while text[0][0] == '\n':
                             #print("首句為空行，已刪除\n")
                             del text[0]
@@ -89,8 +89,7 @@ def write(n, length, fn):
                             text[-1] = line[:-2] + '\n'
                         break
                     line = ""
-        if len(text)>5:
-            passed = False
+
         if passed:
             re.append(text)
     return re
