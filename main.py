@@ -40,4 +40,8 @@ def feedback():
 def gallery():
     return render_template('gallery.html')
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+	
 app.run(host='0.0.0.0', port=81)

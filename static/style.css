@@ -91,7 +91,7 @@ body {
 /* Style the container */
 .poem-container {
   margin-left: 24%;
-  padding-left: 2vw;
+  padding: 0 2vw;
   font: 'Noto Serif TC';
   font-size: 16px;
 }
