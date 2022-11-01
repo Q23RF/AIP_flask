@@ -103,7 +103,7 @@ body {
 input, select{
   -webkit-appearance: none;
   -webkit-border-radius: none;
-  margin: 8px 0;
+  margin: 15px 0;
   width: 60vw;
   background: var(--white);
 }

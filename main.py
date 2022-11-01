@@ -10,9 +10,8 @@ def main():
     if request.method == "POST":
         if int(request.form["id"])==1:	#寫詩
             n = int(request.form["n"])
-            len = int(request.form["len"])
             style = int(request.form["style"])
-            re = write(n, len, style)
+            re = write(n, style)
             return render_template('main.html', poem=re)
         else:	#下載
             p = request.form["poem"]

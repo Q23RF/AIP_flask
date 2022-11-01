@@ -40,12 +40,12 @@ def addWord(words, wordDict):
 
 files = ['懷古.txt', '抒情.txt', '奇詭.txt']
 
-notfirst = "鞋貴…後人祐握外款處廠場之的著嗎吧呢了、，。！？：」"
-notlast = "最不只款，"
+notfirst = "裏鞋貴…後人祐握外款處廠場之的得著嗎吧呢了、，。！？：」"
+notlast = "最不只款，一"
 no = "；：,.●()（）」「—~"
 
 
-def write(n, length, fn):
+def write(n, fn):
     re = []
     wordDict = buildWordDict(files[fn])
 
@@ -54,10 +54,8 @@ def write(n, length, fn):
         initialWord = choice(list(wordDict.keys()))
         text = []
         currentWord = initialWord
-        i = 0
         line = ""
         while True:
-            i += 1
             if currentWord not in wordDict:
                 currentWord = initialWord
             currentWord = retrieveRandomWord(wordDict[currentWord])
@@ -79,7 +77,7 @@ def write(n, length, fn):
 
                 else:
                     text.append(line)
-                    if i+10 >= length and len(text)>4 and len(text)<6:
+                    if len(text)>4 and len(text)<6:
                         while text[0][0] == '\n':
                             #print("首句為空行，已刪除\n")
                             del text[0]
