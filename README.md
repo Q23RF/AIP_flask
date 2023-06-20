@@ -1,25 +1,4 @@
-# AI POET
-made for an expo
-
-## FEATURES
-
-### MAIN
-writes poems with given parameters, generates image of and prints selected ones.
-
-### FEEDBACK
-send feedbacks to me via mailbot.
-
-### GALLERY
-shows some of the AI poet's previous work.
-
-## TO-DOs
-
-### ~~actual printing feature~~   DONE!
-gotta post selected poems to another website so that they can apply to some design made there and eventually get printed out.
-
-### ~~optimizing~~   DONE!
-the poet writes stuffs that are grammarly wrong. i coded LINES to stop that but they just wont work.
-
-### MORE training data
-it's kinda dumb now.
-
+# 關於「AI詩人初體驗」課程
+高雄女中開設的彈性課程，由校內國文科教師講授新詩創作與賞析，暨南大學資工系的吳教授指導Python資料存取及網路爬蟲等技術，讓學生做出自己的AI新詩產生器，並發表其作品。
+# 關於本站
+參與前述課程的學生開發的AI新詩產生器網站版，於10/29～10/30在高雄資訊教育園遊會展出。
