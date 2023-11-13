@@ -3,7 +3,7 @@
   --primaryD:#800000;
   --secondary:#9E9E9E;
   --secondaryD:#353535;
-  --white: #fefefc;
+  --white: #f0efee;
 }
 
 * {
@@ -16,6 +16,10 @@ body {
   background: var(--white);
 }
 
+::selection {
+    color: var(--white);
+    background: var(--primaryD);
+}
   
 /* Style the side navigation */
 .sidenav {

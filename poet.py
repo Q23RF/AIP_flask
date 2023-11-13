@@ -40,7 +40,7 @@ def addWord(words, wordDict):
 
 files = ['懷古.txt', '抒情.txt', '奇詭.txt']
 
-notfirst = "裏鞋貴…後人祐握外款處廠場之的得著嗎吧呢了、，。！？：」"
+notfirst = "個裏鞋貴…後人祐握外款處廠場之的得著嗎吧呢了、，。！？：」"
 notlast = "最不只款，一"
 no = "；：,.●()（）」「—~"
 
@@ -49,7 +49,7 @@ def write(n, fn):
     re = []
     wordDict = buildWordDict(files[fn])
 
-    while len(re)<n:
+    while len(re) < n:
         passed = True
         initialWord = choice(list(wordDict.keys()))
         text = []
@@ -67,23 +67,18 @@ def write(n, fn):
             if currentWord == '\n':
                 for c in line:
                     if c in no:
-                        #print("句中出現「{}」，已刪除\n".format(c))
                         passed = False
                 while line[0] in notfirst:
-                    #print(line)
-                    #print("句首出現「{}」，已刪除\n".format(line[0]))
                     line = line[1:]
-
 
                 else:
                     text.append(line)
-                    if len(text)>4 and len(text)<6:
+                    if len(text) > 4 and len(text) < 6:
                         while text[0][0] == '\n':
-                            #print("首句為空行，已刪除\n")
                             del text[0]
-                        if len(line)>2 and line[-2] in notlast:
-                            #print(line)
-                            #print("詩末出現「{}」，已刪除\n".format(line[-2]))
+                        while text[-1][0] == '\n':
+                            del text[-1]
+                        while len(line) > 2 and line[-2] in notlast:
                             text[-1] = line[:-2] + '\n'
                         break
                     line = ""
